@@ -25,6 +25,8 @@ Partial Class GissaFormular
         Me.Gissning = New System.Windows.Forms.TextBox()
         Me.GissaKnapp = New System.Windows.Forms.Button()
         Me.Svar = New System.Windows.Forms.Label()
+        Me.AntalGissningar = New System.Windows.Forms.Label()
+        Me.BorjaOm = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Gissning
@@ -36,6 +38,7 @@ Partial Class GissaFormular
         '
         'GissaKnapp
         '
+        Me.GissaKnapp.Enabled = False
         Me.GissaKnapp.Location = New System.Drawing.Point(333, 32)
         Me.GissaKnapp.Name = "GissaKnapp"
         Me.GissaKnapp.Size = New System.Drawing.Size(108, 50)
@@ -46,17 +49,38 @@ Partial Class GissaFormular
         'Svar
         '
         Me.Svar.AutoSize = True
-        Me.Svar.Location = New System.Drawing.Point(124, 132)
+        Me.Svar.Location = New System.Drawing.Point(124, 131)
         Me.Svar.Name = "Svar"
         Me.Svar.Size = New System.Drawing.Size(53, 20)
         Me.Svar.TabIndex = 2
         Me.Svar.Text = "Label1"
         '
+        'AntalGissningar
+        '
+        Me.AntalGissningar.AutoSize = True
+        Me.AntalGissningar.Location = New System.Drawing.Point(124, 92)
+        Me.AntalGissningar.Name = "AntalGissningar"
+        Me.AntalGissningar.Size = New System.Drawing.Size(53, 20)
+        Me.AntalGissningar.TabIndex = 3
+        Me.AntalGissningar.Text = "Label1"
+        '
+        'BorjaOm
+        '
+        Me.BorjaOm.Location = New System.Drawing.Point(466, 37)
+        Me.BorjaOm.Name = "BorjaOm"
+        Me.BorjaOm.Size = New System.Drawing.Size(106, 41)
+        Me.BorjaOm.TabIndex = 4
+        Me.BorjaOm.Text = "Börja om"
+        Me.BorjaOm.UseVisualStyleBackColor = True
+        '
         'GissaFormular
         '
+        Me.AcceptButton = Me.GissaKnapp
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(549, 231)
+        Me.ClientSize = New System.Drawing.Size(612, 183)
+        Me.Controls.Add(Me.BorjaOm)
+        Me.Controls.Add(Me.AntalGissningar)
         Me.Controls.Add(Me.Svar)
         Me.Controls.Add(Me.GissaKnapp)
         Me.Controls.Add(Me.Gissning)
@@ -73,4 +97,6 @@ Partial Class GissaFormular
     Friend WithEvents Gissning As TextBox
     Friend WithEvents GissaKnapp As Button
     Friend WithEvents Svar As Label
+    Friend WithEvents AntalGissningar As Label
+    Friend WithEvents BorjaOm As Button
 End Class
