@@ -18,7 +18,12 @@
                 sender.Text = "-" & sender.Text
             End If
             sender.select(sender.text.length, 0)
+        Else
+            If sender.Text.StartsWith("-"c) Then
+                sender.selectionStart = 1
+            End If
         End If
+
     End Sub
 
     Private Sub btnLaggTill_Click(sender As Object, e As EventArgs) Handles btnLaggTill.Click
@@ -71,4 +76,5 @@
         lblMedel.Text = (Summa / lstTal.Items.Count).ToString
 
     End Sub
+
 End Class

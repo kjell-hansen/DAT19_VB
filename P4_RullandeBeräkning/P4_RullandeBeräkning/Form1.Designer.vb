@@ -34,16 +34,18 @@ Partial Class Form1
         '
         'txtTal
         '
-        Me.txtTal.Location = New System.Drawing.Point(61, 39)
+        Me.txtTal.Location = New System.Drawing.Point(53, 29)
+        Me.txtTal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTal.Name = "txtTal"
-        Me.txtTal.Size = New System.Drawing.Size(144, 27)
+        Me.txtTal.Size = New System.Drawing.Size(126, 23)
         Me.txtTal.TabIndex = 0
         '
         'btnLaggTill
         '
-        Me.btnLaggTill.Location = New System.Drawing.Point(296, 38)
+        Me.btnLaggTill.Location = New System.Drawing.Point(259, 28)
+        Me.btnLaggTill.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnLaggTill.Name = "btnLaggTill"
-        Me.btnLaggTill.Size = New System.Drawing.Size(102, 37)
+        Me.btnLaggTill.Size = New System.Drawing.Size(89, 28)
         Me.btnLaggTill.TabIndex = 1
         Me.btnLaggTill.Text = "Lägg till"
         Me.btnLaggTill.UseVisualStyleBackColor = True
@@ -51,53 +53,55 @@ Partial Class Form1
         'lstTal
         '
         Me.lstTal.FormattingEnabled = True
-        Me.lstTal.ItemHeight = 20
-        Me.lstTal.Location = New System.Drawing.Point(509, 45)
+        Me.lstTal.ItemHeight = 15
+        Me.lstTal.Location = New System.Drawing.Point(445, 34)
+        Me.lstTal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstTal.Name = "lstTal"
-        Me.lstTal.Size = New System.Drawing.Size(214, 204)
+        Me.lstTal.Size = New System.Drawing.Size(188, 154)
         Me.lstTal.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(80, 119)
+        Me.Label1.Location = New System.Drawing.Point(70, 89)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 20)
+        Me.Label1.Size = New System.Drawing.Size(48, 15)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Summa"
         '
         'lblSumma
         '
         Me.lblSumma.AutoSize = True
-        Me.lblSumma.Location = New System.Drawing.Point(166, 120)
+        Me.lblSumma.Location = New System.Drawing.Point(145, 90)
         Me.lblSumma.Name = "lblSumma"
-        Me.lblSumma.Size = New System.Drawing.Size(78, 20)
+        Me.lblSumma.Size = New System.Drawing.Size(62, 15)
         Me.lblSumma.TabIndex = 4
         Me.lblSumma.Text = "lblSUmma"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(80, 157)
+        Me.Label3.Location = New System.Drawing.Point(70, 118)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 20)
+        Me.Label3.Size = New System.Drawing.Size(40, 15)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Medel"
         '
         'lblMedel
         '
         Me.lblMedel.AutoSize = True
-        Me.lblMedel.Location = New System.Drawing.Point(166, 158)
+        Me.lblMedel.Location = New System.Drawing.Point(145, 118)
         Me.lblMedel.Name = "lblMedel"
-        Me.lblMedel.Size = New System.Drawing.Size(68, 20)
+        Me.lblMedel.Size = New System.Drawing.Size(53, 15)
         Me.lblMedel.TabIndex = 4
         Me.lblMedel.Text = "lblMedel"
         '
         'btnBorjaOm
         '
-        Me.btnBorjaOm.Location = New System.Drawing.Point(300, 98)
+        Me.btnBorjaOm.Location = New System.Drawing.Point(262, 74)
+        Me.btnBorjaOm.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBorjaOm.Name = "btnBorjaOm"
-        Me.btnBorjaOm.Size = New System.Drawing.Size(97, 40)
+        Me.btnBorjaOm.Size = New System.Drawing.Size(85, 30)
         Me.btnBorjaOm.TabIndex = 5
         Me.btnBorjaOm.Text = "Börja om"
         Me.btnBorjaOm.UseVisualStyleBackColor = True
@@ -105,10 +109,10 @@ Partial Class Form1
         'Form1
         '
         Me.AcceptButton = Me.btnLaggTill
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnBorjaOm
-        Me.ClientSize = New System.Drawing.Size(800, 279)
+        Me.ClientSize = New System.Drawing.Size(700, 209)
         Me.Controls.Add(Me.btnBorjaOm)
         Me.Controls.Add(Me.lblMedel)
         Me.Controls.Add(Me.Label3)
@@ -117,6 +121,7 @@ Partial Class Form1
         Me.Controls.Add(Me.lstTal)
         Me.Controls.Add(Me.btnLaggTill)
         Me.Controls.Add(Me.txtTal)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
