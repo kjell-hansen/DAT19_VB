@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>P5_Tärningar</RootNamespace>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>P5_Tärningar.frmTärningar</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
