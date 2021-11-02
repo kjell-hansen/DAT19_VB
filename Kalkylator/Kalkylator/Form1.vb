@@ -57,11 +57,11 @@ Public Class frmKalkylator
         ClearTextbox()
         berakning = ""
     End Sub
-    Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click, btnMC.Click
+    Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
         ClearTextbox()
     End Sub
 
-    Private Sub Calculate(sender As Object, e As EventArgs) Handles btnSubtract.Click, btnMultiply.Click, btnDivide.Click, btnAdd.Click, btnEquals.Click, btnSquare.Click, btnSqRoot.Click, btnOpposite.Click, btnMR.Click, btnMemoryAdd.Click, btnInvert.Click
+    Private Sub Calculate(sender As Object, e As EventArgs) Handles btnSubtract.Click, btnMultiply.Click, btnDivide.Click, btnAdd.Click, btnEquals.Click
         Dim input As Double
         If Double.TryParse(txtInput.Text, input) = False Then
             Exit Sub
@@ -100,6 +100,11 @@ Public Class frmKalkylator
             Return "E: Div/0"
         End If
 
+        ' Hantera NaN (troligen roten ur negativt tal)
+        If Double.IsNaN(resultat) Then
+            Return "E: Irr"
+        End If
+
         If Math.Abs(resultat) >= 100000000 Then
             Return "E:Overf."
         End If
@@ -120,5 +125,27 @@ Public Class frmKalkylator
         ' Rensar textrutan
         txtInput.Text = "0"
         btnDecimal.Enabled = True
+    End Sub
+
+    Private Sub UnaryFunc(sender As Object, e As EventArgs) Handles btnSquare.Click, btnSqRoot.Click, btnInvert.Click
+        Dim input, res As Double
+        If Double.TryParse(txtInput.Text, input) = False Then
+            Exit Sub
+        End If
+
+        If sender Is btnSquare Then
+            res = input * input
+        ElseIf sender Is btnInvert Then
+            res = 1 / input
+        ElseIf sender Is btnSqRoot Then
+            res = Math.Sqrt(input)
+        End If
+
+        txtInput.Text = formateraResultat(res)
+
+        ' Förbered för ny inmatning
+        nyInmatning = True
+        btnDecimal.Enabled = True
+
     End Sub
 End Class
