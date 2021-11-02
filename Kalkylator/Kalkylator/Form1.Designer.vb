@@ -48,6 +48,7 @@ Partial Class frmKalkylator
         Me.btnMemoryAdd = New System.Windows.Forms.Button()
         Me.btnMR = New System.Windows.Forms.Button()
         Me.btnOpposite = New System.Windows.Forms.Button()
+        Me.lblMemory = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn7
@@ -310,11 +311,22 @@ Partial Class frmKalkylator
         Me.btnOpposite.Text = "±"
         Me.btnOpposite.UseVisualStyleBackColor = True
         '
+        'lblMemory
+        '
+        Me.lblMemory.AutoSize = True
+        Me.lblMemory.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblMemory.Location = New System.Drawing.Point(21, 17)
+        Me.lblMemory.Name = "lblMemory"
+        Me.lblMemory.Size = New System.Drawing.Size(21, 18)
+        Me.lblMemory.TabIndex = 18
+        Me.lblMemory.Text = "M"
+        '
         'frmKalkylator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(306, 345)
+        Me.Controls.Add(Me.lblMemory)
         Me.Controls.Add(Me.txtInput)
         Me.Controls.Add(Me.btnMR)
         Me.Controls.Add(Me.btnMemoryAdd)
@@ -377,4 +389,5 @@ Partial Class frmKalkylator
     Friend WithEvents btnMemoryAdd As Button
     Friend WithEvents btnMR As Button
     Friend WithEvents btnOpposite As Button
+    Friend WithEvents lblMemory As Label
 End Class

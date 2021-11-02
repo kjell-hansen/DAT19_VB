@@ -11,16 +11,19 @@ Public Class frmKalkylator
 
         ' Rensa inmatningsrutan och förbered för inmatning
         ClearTextbox()
+
+        lblMemory.Text = ""
     End Sub
 
     Private Sub NumbersClick(sender As Object, e As EventArgs) Handles btn9.Click, btnDecimal.Click, btn8.Click, btn7.Click, btn6.Click, btn5.Click, btn4.Click, btn3.Click, btn2.Click, btn1.Click, btn0.Click
         If nyInmatning = False Then
+            Dim maxLen = 7 - txtInput.Text.Contains(btnDecimal.Text) - txtInput.Text.StartsWith("-")
+
             ' Avbryt om
             '   - antalet tecken är mer än 7 (inget decimaltecken), 
             '   - antalet tecken är mer än 8 (varav ett är decimaltecken)
             '   - inmatat tal är en 0 och det bara finns en 0:a i rutan
-            If (txtInput.TextLength > 7 AndAlso txtInput.Text.Contains(btnDecimal.Text) = False) _
-            OrElse (txtInput.TextLength > 8 AndAlso txtInput.Text.Contains(btnDecimal.Text)) _
+            If (txtInput.TextLength > maxLen) _
             OrElse (txtInput.Text = "0" AndAlso sender Is btn0) Then
                 Exit Sub
             End If
@@ -91,6 +94,27 @@ Public Class frmKalkylator
         ' Minns vilken önskad beräkning är
         berakning = sender.text
     End Sub
+    Private Sub UnaryFunc(sender As Object, e As EventArgs) Handles btnSquare.Click, btnSqRoot.Click, btnInvert.Click
+        Dim input, res As Double
+        If Double.TryParse(txtInput.Text, input) = False Then
+            Exit Sub
+        End If
+
+        If sender Is btnSquare Then
+            res = input * input
+        ElseIf sender Is btnInvert Then
+            res = 1 / input
+        ElseIf sender Is btnSqRoot Then
+            res = Math.Sqrt(input)
+        End If
+
+        txtInput.Text = formateraResultat(res)
+
+        ' Förbered för ny inmatning
+        nyInmatning = True
+        btnDecimal.Enabled = True
+
+    End Sub
 
     Private Function formateraResultat(resultat As Double) As String
         ' Formaterar resultatet och returnerar det som en sträng
@@ -127,25 +151,11 @@ Public Class frmKalkylator
         btnDecimal.Enabled = True
     End Sub
 
-    Private Sub UnaryFunc(sender As Object, e As EventArgs) Handles btnSquare.Click, btnSqRoot.Click, btnInvert.Click
-        Dim input, res As Double
-        If Double.TryParse(txtInput.Text, input) = False Then
-            Exit Sub
+    Private Sub btnOpposite_Click(sender As Object, e As EventArgs) Handles btnOpposite.Click
+        If txtInput.Text.StartsWith("-") Then
+            txtInput.Text = Strings.Right(txtInput.Text, txtInput.Text.Length - 1)
+        Else
+            txtInput.Text = "-" & txtInput.Text
         End If
-
-        If sender Is btnSquare Then
-            res = input * input
-        ElseIf sender Is btnInvert Then
-            res = 1 / input
-        ElseIf sender Is btnSqRoot Then
-            res = Math.Sqrt(input)
-        End If
-
-        txtInput.Text = formateraResultat(res)
-
-        ' Förbered för ny inmatning
-        nyInmatning = True
-        btnDecimal.Enabled = True
-
     End Sub
 End Class
