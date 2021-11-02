@@ -315,7 +315,7 @@ Partial Class frmKalkylator
         '
         Me.lblMemory.AutoSize = True
         Me.lblMemory.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblMemory.Location = New System.Drawing.Point(21, 17)
+        Me.lblMemory.Location = New System.Drawing.Point(21, 12)
         Me.lblMemory.Name = "lblMemory"
         Me.lblMemory.Size = New System.Drawing.Size(21, 18)
         Me.lblMemory.TabIndex = 18
@@ -357,7 +357,7 @@ Partial Class frmKalkylator
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmKalkylator"
-        Me.Text = "Kalkylator, enkel"
+        Me.Text = "Kalkylator, utökad"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

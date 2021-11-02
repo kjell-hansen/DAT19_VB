@@ -4,6 +4,7 @@ Public Class frmKalkylator
     Dim resultat As Double          ' Variabel för att minnas tidigare resultat
     Dim berakning As String         ' Variabel för att minnas önskat räknesätt
     Dim nyInmatning As Boolean      ' Flagga för om det är en ny inmatning eller fortsatt
+    Dim minne As Double             ' Variabel för att hålla tal i minnet
 
     Private Sub frmKalkylator_Load(sender As Object, e As EventArgs) Handles Me.Load
         ' Sätt lokalt anpassat decimaltecken
@@ -156,6 +157,37 @@ Public Class frmKalkylator
             txtInput.Text = Strings.Right(txtInput.Text, txtInput.Text.Length - 1)
         Else
             txtInput.Text = "-" & txtInput.Text
+        End If
+    End Sub
+
+    Private Sub btnMC_Click(sender As Object, e As EventArgs) Handles btnMC.Click
+        minne = 0
+        lblMemory.Text = ""
+
+        ' Förbered för ny inmatning
+        nyInmatning = True
+        btnDecimal.Enabled = True
+
+    End Sub
+
+    Private Sub btnMR_Click(sender As Object, e As EventArgs) Handles btnMR.Click
+        If minne <> 0 Then
+            txtInput.Text = minne.ToString
+        End If
+
+        ' Förbered för ny inmatning
+        nyInmatning = True
+        btnDecimal.Enabled = True
+
+    End Sub
+
+    Private Sub btnMemoryAdd_Click(sender As Object, e As EventArgs) Handles btnMemoryAdd.Click
+        Calculate(sender, e)
+        minne += txtInput.Text
+        If minne = 0 Then
+            lblMemory.Text = ""
+        Else
+            lblMemory.Text = "M"
         End If
     End Sub
 End Class
