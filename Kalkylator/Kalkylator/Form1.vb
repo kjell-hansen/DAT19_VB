@@ -57,11 +57,11 @@ Public Class frmKalkylator
         ClearTextbox()
         berakning = ""
     End Sub
-    Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
+    Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click, btnMC.Click
         ClearTextbox()
     End Sub
 
-    Private Sub Calculate(sender As Object, e As EventArgs) Handles btnSubtract.Click, btnMultiply.Click, btnDivide.Click, btnAdd.Click, btnEquals.Click
+    Private Sub Calculate(sender As Object, e As EventArgs) Handles btnSubtract.Click, btnMultiply.Click, btnDivide.Click, btnAdd.Click, btnEquals.Click, btnSquare.Click, btnSqRoot.Click, btnOpposite.Click, btnMR.Click, btnMemoryAdd.Click, btnInvert.Click
         Dim input As Double
         If Double.TryParse(txtInput.Text, input) = False Then
             Exit Sub

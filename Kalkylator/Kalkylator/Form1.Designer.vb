@@ -41,6 +41,13 @@ Partial Class frmKalkylator
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnAC = New System.Windows.Forms.Button()
         Me.btnC = New System.Windows.Forms.Button()
+        Me.btnInvert = New System.Windows.Forms.Button()
+        Me.btnMC = New System.Windows.Forms.Button()
+        Me.btnSquare = New System.Windows.Forms.Button()
+        Me.btnSqRoot = New System.Windows.Forms.Button()
+        Me.btnMemoryAdd = New System.Windows.Forms.Button()
+        Me.btnMR = New System.Windows.Forms.Button()
+        Me.btnOpposite = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn7
@@ -86,7 +93,7 @@ Partial Class frmKalkylator
         'txtInput
         '
         Me.txtInput.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtInput.Location = New System.Drawing.Point(19, 12)
+        Me.txtInput.Location = New System.Drawing.Point(76, 12)
         Me.txtInput.Name = "txtInput"
         Me.txtInput.ReadOnly = True
         Me.txtInput.Size = New System.Drawing.Size(213, 35)
@@ -196,7 +203,7 @@ Partial Class frmKalkylator
         'btnEquals
         '
         Me.btnEquals.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnEquals.Location = New System.Drawing.Point(133, 282)
+        Me.btnEquals.Location = New System.Drawing.Point(248, 282)
         Me.btnEquals.Name = "btnEquals"
         Me.btnEquals.Size = New System.Drawing.Size(41, 35)
         Me.btnEquals.TabIndex = 11
@@ -206,7 +213,7 @@ Partial Class frmKalkylator
         'btnAdd
         '
         Me.btnAdd.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnAdd.Location = New System.Drawing.Point(190, 282)
+        Me.btnAdd.Location = New System.Drawing.Point(191, 282)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(41, 35)
         Me.btnAdd.TabIndex = 12
@@ -215,38 +222,115 @@ Partial Class frmKalkylator
         '
         'btnAC
         '
-        Me.btnAC.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnAC.Location = New System.Drawing.Point(119, 66)
+        Me.btnAC.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnAC.Location = New System.Drawing.Point(21, 69)
         Me.btnAC.Name = "btnAC"
-        Me.btnAC.Size = New System.Drawing.Size(55, 35)
+        Me.btnAC.Size = New System.Drawing.Size(40, 35)
         Me.btnAC.TabIndex = 17
         Me.btnAC.Text = "AC"
         Me.btnAC.UseVisualStyleBackColor = True
         '
         'btnC
         '
-        Me.btnC.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnC.Location = New System.Drawing.Point(191, 66)
+        Me.btnC.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnC.Location = New System.Drawing.Point(76, 69)
         Me.btnC.Name = "btnC"
         Me.btnC.Size = New System.Drawing.Size(41, 35)
         Me.btnC.TabIndex = 16
         Me.btnC.Text = "C"
         Me.btnC.UseVisualStyleBackColor = True
         '
+        'btnInvert
+        '
+        Me.btnInvert.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnInvert.Location = New System.Drawing.Point(248, 120)
+        Me.btnInvert.Name = "btnInvert"
+        Me.btnInvert.Size = New System.Drawing.Size(41, 35)
+        Me.btnInvert.TabIndex = 15
+        Me.btnInvert.Text = "1/x"
+        Me.btnInvert.UseVisualStyleBackColor = True
+        '
+        'btnMC
+        '
+        Me.btnMC.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnMC.Location = New System.Drawing.Point(133, 69)
+        Me.btnMC.Name = "btnMC"
+        Me.btnMC.Size = New System.Drawing.Size(41, 35)
+        Me.btnMC.TabIndex = 16
+        Me.btnMC.Text = "MC"
+        Me.btnMC.UseVisualStyleBackColor = True
+        '
+        'btnSquare
+        '
+        Me.btnSquare.Font = New System.Drawing.Font("Arial Rounded MT Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnSquare.Location = New System.Drawing.Point(248, 174)
+        Me.btnSquare.Name = "btnSquare"
+        Me.btnSquare.Size = New System.Drawing.Size(41, 35)
+        Me.btnSquare.TabIndex = 14
+        Me.btnSquare.Text = "x²"
+        Me.btnSquare.UseVisualStyleBackColor = True
+        '
+        'btnSqRoot
+        '
+        Me.btnSqRoot.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnSqRoot.Location = New System.Drawing.Point(248, 228)
+        Me.btnSqRoot.Name = "btnSqRoot"
+        Me.btnSqRoot.Size = New System.Drawing.Size(41, 35)
+        Me.btnSqRoot.TabIndex = 13
+        Me.btnSqRoot.Text = "√¯"
+        Me.btnSqRoot.UseVisualStyleBackColor = True
+        '
+        'btnMemoryAdd
+        '
+        Me.btnMemoryAdd.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnMemoryAdd.Location = New System.Drawing.Point(248, 69)
+        Me.btnMemoryAdd.Name = "btnMemoryAdd"
+        Me.btnMemoryAdd.Size = New System.Drawing.Size(41, 35)
+        Me.btnMemoryAdd.TabIndex = 12
+        Me.btnMemoryAdd.Text = "M+"
+        Me.btnMemoryAdd.UseVisualStyleBackColor = True
+        '
+        'btnMR
+        '
+        Me.btnMR.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnMR.Location = New System.Drawing.Point(191, 69)
+        Me.btnMR.Name = "btnMR"
+        Me.btnMR.Size = New System.Drawing.Size(41, 35)
+        Me.btnMR.TabIndex = 12
+        Me.btnMR.Text = "MR"
+        Me.btnMR.UseVisualStyleBackColor = True
+        '
+        'btnOpposite
+        '
+        Me.btnOpposite.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnOpposite.Location = New System.Drawing.Point(133, 282)
+        Me.btnOpposite.Name = "btnOpposite"
+        Me.btnOpposite.Size = New System.Drawing.Size(41, 35)
+        Me.btnOpposite.TabIndex = 12
+        Me.btnOpposite.Text = "±"
+        Me.btnOpposite.UseVisualStyleBackColor = True
+        '
         'frmKalkylator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(252, 341)
+        Me.ClientSize = New System.Drawing.Size(306, 345)
         Me.Controls.Add(Me.txtInput)
+        Me.Controls.Add(Me.btnMR)
+        Me.Controls.Add(Me.btnMemoryAdd)
+        Me.Controls.Add(Me.btnOpposite)
         Me.Controls.Add(Me.btnAdd)
+        Me.Controls.Add(Me.btnSqRoot)
         Me.Controls.Add(Me.btnEquals)
         Me.Controls.Add(Me.btnSubtract)
+        Me.Controls.Add(Me.btnSquare)
         Me.Controls.Add(Me.btn3)
         Me.Controls.Add(Me.btnMultiply)
         Me.Controls.Add(Me.btnDecimal)
         Me.Controls.Add(Me.btn6)
+        Me.Controls.Add(Me.btnMC)
         Me.Controls.Add(Me.btn2)
+        Me.Controls.Add(Me.btnInvert)
         Me.Controls.Add(Me.btnC)
         Me.Controls.Add(Me.btnDivide)
         Me.Controls.Add(Me.btn0)
@@ -286,4 +370,11 @@ Partial Class frmKalkylator
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnAC As Button
     Friend WithEvents btnC As Button
+    Friend WithEvents btnInvert As Button
+    Friend WithEvents btnMC As Button
+    Friend WithEvents btnSquare As Button
+    Friend WithEvents btnSqRoot As Button
+    Friend WithEvents btnMemoryAdd As Button
+    Friend WithEvents btnMR As Button
+    Friend WithEvents btnOpposite As Button
 End Class
