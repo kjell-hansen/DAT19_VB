@@ -61,22 +61,27 @@ Public Class frmKalkylator
     End Sub
 
     Private Sub Calculate(sender As Object, e As EventArgs) Handles btnSubtract.Click, btnMultiply.Click, btnDivide.Click, btnAdd.Click, btnEquals.Click
+        Dim input As Double
+        If Double.TryParse(txtInput.Text, input) = False Then
+            Exit Sub
+        End If
+
         ' Vilken beräkning önskades förra gången?
         Select Case berakning
             Case "+"
-                resultat += CDbl(txtInput.Text)
+                resultat += input
             Case "-"
-                resultat -= CDbl(txtInput.Text)
+                resultat -= input
             Case "×"
-                resultat *= CDbl(txtInput.Text)
+                resultat *= input
             Case "/"
-                resultat /= CDbl(txtInput.Text)
+                resultat /= input
             Case Else
-                resultat = CDbl(txtInput.Text)
-            End Select
+                resultat = input
+        End Select
 
-            ' Skriv resultatet av beräkningen i textrutan
-            txtInput.Text = resultat
+        ' Skriv resultatet av beräkningen i textrutan
+        txtInput.Text = formateraResultat(resultat)
 
         ' Förbered för ny inmatning
         nyInmatning = True
@@ -85,6 +90,17 @@ Public Class frmKalkylator
         ' Minns vilken önskad beräkning är
         berakning = sender.text
     End Sub
+
+    Private Function formateraResultat(resultat As Double) As String
+        ' Formaterar resultatet och returnerar det som en sträng
+
+        ' Division med noll
+        If Double.IsInfinity(resultat) Then
+            Return "E: Div/0"
+        End If
+
+        Return resultat.ToString
+    End Function
 
     Private Sub ClearTextbox()
         ' Rensar textrutan
