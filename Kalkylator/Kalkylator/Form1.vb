@@ -99,7 +99,20 @@ Public Class frmKalkylator
             Return "E: Div/0"
         End If
 
-        Return resultat.ToString
+        If Math.Abs(resultat) >= 100000000 Then
+            Return "E:Overf."
+        End If
+
+        Dim strResultat As String
+        Dim format As String = "0.#######"
+        If (resultat <> CInt(resultat)) Then
+            Dim potens As Integer = Math.Log10(Math.Abs(resultat))
+            format = Strings.Left(format, format.Length - potens)
+        End If
+
+        strResultat = String.Format("{0:" & format & "}", resultat)
+
+        Return strResultat
     End Function
 
     Private Sub ClearTextbox()

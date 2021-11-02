@@ -256,6 +256,7 @@ Partial Class frmKalkylator
         Me.Controls.Add(Me.btn4)
         Me.Controls.Add(Me.btn8)
         Me.Controls.Add(Me.btn7)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmKalkylator"
