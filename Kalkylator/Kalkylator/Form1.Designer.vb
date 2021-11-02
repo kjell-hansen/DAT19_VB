@@ -325,7 +325,7 @@ Partial Class frmKalkylator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(306, 345)
+        Me.ClientSize = New System.Drawing.Size(306, 336)
         Me.Controls.Add(Me.lblMemory)
         Me.Controls.Add(Me.txtInput)
         Me.Controls.Add(Me.btnMR)
