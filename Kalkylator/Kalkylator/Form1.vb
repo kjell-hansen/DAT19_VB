@@ -26,8 +26,13 @@ Public Class frmKalkylator
             End If
         Else
             ' Ny inmatning ta ner flaggan och tilldela värdet från inmatningen till rutan
+            '  (med hantering av decimaltecken)
             nyInmatning = False
-            txtInput.Text = sender.Text
+            If sender Is btnDecimal Then
+                txtInput.Text = "0" & sender.text
+            Else
+                txtInput.Text = sender.Text
+            End If
             Exit Sub
         End If
 
@@ -68,10 +73,10 @@ Public Class frmKalkylator
                 resultat /= CDbl(txtInput.Text)
             Case Else
                 resultat = CDbl(txtInput.Text)
-        End Select
+            End Select
 
-        ' Skriv resultatet av beräkningen i textrutan
-        txtInput.Text = resultat
+            ' Skriv resultatet av beräkningen i textrutan
+            txtInput.Text = resultat
 
         ' Förbered för ny inmatning
         nyInmatning = True
