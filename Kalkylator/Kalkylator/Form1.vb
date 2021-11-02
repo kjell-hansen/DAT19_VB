@@ -30,6 +30,7 @@ Public Class frmKalkylator
             nyInmatning = False
             If sender Is btnDecimal Then
                 txtInput.Text = "0" & sender.text
+                btnDecimal.Enabled = False
             Else
                 txtInput.Text = sender.Text
             End If
