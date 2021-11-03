@@ -51,21 +51,21 @@ Partial Class frmKalkylator
         '
         'txt1
         '
-        Me.txt1.Location = New System.Drawing.Point(12, 23)
+        Me.txt1.Location = New System.Drawing.Point(10, 23)
         Me.txt1.Name = "txt1"
         Me.txt1.Size = New System.Drawing.Size(77, 27)
         Me.txt1.TabIndex = 0
         '
         'txtOp
         '
-        Me.txtOp.Location = New System.Drawing.Point(99, 23)
+        Me.txtOp.Location = New System.Drawing.Point(97, 23)
         Me.txtOp.Name = "txtOp"
         Me.txtOp.Size = New System.Drawing.Size(46, 27)
         Me.txtOp.TabIndex = 1
         '
         'txt2
         '
-        Me.txt2.Location = New System.Drawing.Point(151, 23)
+        Me.txt2.Location = New System.Drawing.Point(149, 23)
         Me.txt2.Name = "txt2"
         Me.txt2.Size = New System.Drawing.Size(83, 27)
         Me.txt2.TabIndex = 2
@@ -271,6 +271,9 @@ Partial Class frmKalkylator
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(257, 313)
+        Me.Controls.Add(Me.txt2)
+        Me.Controls.Add(Me.txtOp)
+        Me.Controls.Add(Me.txt1)
         Me.Controls.Add(Me.btnC)
         Me.Controls.Add(Me.btnAC)
         Me.Controls.Add(Me.btnPunkt)
@@ -293,9 +296,6 @@ Partial Class frmKalkylator
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtInput)
-        Me.Controls.Add(Me.txt2)
-        Me.Controls.Add(Me.txtOp)
-        Me.Controls.Add(Me.txt1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.MinimizeBox = False
