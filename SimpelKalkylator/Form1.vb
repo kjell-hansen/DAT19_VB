@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class frmKalkylator
     Dim nyBerakning As Boolean
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtInput.Text = "0"
@@ -53,7 +53,15 @@
 
         End Select
         txtOp.Text = sender.text
+        txtInput.Text = Strings.Replace(txtInput.Text, ",", ".")
         txt1.Text = txtInput.Text
+        btnPunkt.Enabled = True
+        nyBerakning = True
+    End Sub
+
+    Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
+        btnPunkt.Enabled = True
+        txtInput.Text = "0"
         nyBerakning = True
     End Sub
 End Class

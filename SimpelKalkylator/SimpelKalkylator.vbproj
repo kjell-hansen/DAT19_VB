@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>SimpelKalkylator</RootNamespace>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>SimpelKalkylator.frmKalkylator</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>

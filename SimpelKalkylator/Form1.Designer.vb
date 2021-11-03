@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmKalkylator
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -51,28 +51,28 @@ Partial Class Form1
         '
         'txt1
         '
-        Me.txt1.Location = New System.Drawing.Point(34, 31)
+        Me.txt1.Location = New System.Drawing.Point(12, 23)
         Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(125, 27)
+        Me.txt1.Size = New System.Drawing.Size(77, 27)
         Me.txt1.TabIndex = 0
         '
         'txtOp
         '
-        Me.txtOp.Location = New System.Drawing.Point(200, 31)
+        Me.txtOp.Location = New System.Drawing.Point(99, 23)
         Me.txtOp.Name = "txtOp"
-        Me.txtOp.Size = New System.Drawing.Size(125, 27)
+        Me.txtOp.Size = New System.Drawing.Size(46, 27)
         Me.txtOp.TabIndex = 1
         '
         'txt2
         '
-        Me.txt2.Location = New System.Drawing.Point(373, 31)
+        Me.txt2.Location = New System.Drawing.Point(151, 23)
         Me.txt2.Name = "txt2"
-        Me.txt2.Size = New System.Drawing.Size(125, 27)
+        Me.txt2.Size = New System.Drawing.Size(83, 27)
         Me.txt2.TabIndex = 2
         '
         'txtInput
         '
-        Me.txtInput.Location = New System.Drawing.Point(34, 90)
+        Me.txtInput.Location = New System.Drawing.Point(34, 64)
         Me.txtInput.Name = "txtInput"
         Me.txtInput.Size = New System.Drawing.Size(198, 27)
         Me.txtInput.TabIndex = 3
@@ -80,7 +80,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 20)
         Me.Label1.TabIndex = 4
@@ -89,7 +89,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(200, 0)
+        Me.Label2.Location = New System.Drawing.Point(93, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 20)
         Me.Label2.TabIndex = 4
@@ -98,7 +98,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(373, 0)
+        Me.Label3.Location = New System.Drawing.Point(160, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 20)
         Me.Label3.TabIndex = 4
@@ -106,171 +106,171 @@ Partial Class Form1
         '
         'btn1
         '
-        Me.btn1.Location = New System.Drawing.Point(82, 224)
+        Me.btn1.Location = New System.Drawing.Point(27, 213)
         Me.btn1.Name = "btn1"
-        Me.btn1.Size = New System.Drawing.Size(94, 29)
+        Me.btn1.Size = New System.Drawing.Size(39, 29)
         Me.btn1.TabIndex = 5
         Me.btn1.Text = "1"
         Me.btn1.UseVisualStyleBackColor = True
         '
         'btn2
         '
-        Me.btn2.Location = New System.Drawing.Point(200, 224)
+        Me.btn2.Location = New System.Drawing.Point(83, 213)
         Me.btn2.Name = "btn2"
-        Me.btn2.Size = New System.Drawing.Size(94, 29)
+        Me.btn2.Size = New System.Drawing.Size(39, 29)
         Me.btn2.TabIndex = 6
         Me.btn2.Text = "2"
         Me.btn2.UseVisualStyleBackColor = True
         '
         'btn3
         '
-        Me.btn3.Location = New System.Drawing.Point(314, 224)
+        Me.btn3.Location = New System.Drawing.Point(138, 213)
         Me.btn3.Name = "btn3"
-        Me.btn3.Size = New System.Drawing.Size(94, 29)
+        Me.btn3.Size = New System.Drawing.Size(39, 29)
         Me.btn3.TabIndex = 7
         Me.btn3.Text = "3"
         Me.btn3.UseVisualStyleBackColor = True
         '
         'btn4
         '
-        Me.btn4.Location = New System.Drawing.Point(82, 189)
+        Me.btn4.Location = New System.Drawing.Point(27, 178)
         Me.btn4.Name = "btn4"
-        Me.btn4.Size = New System.Drawing.Size(94, 29)
+        Me.btn4.Size = New System.Drawing.Size(39, 29)
         Me.btn4.TabIndex = 8
         Me.btn4.Text = "4"
         Me.btn4.UseVisualStyleBackColor = True
         '
         'btn5
         '
-        Me.btn5.Location = New System.Drawing.Point(200, 189)
+        Me.btn5.Location = New System.Drawing.Point(83, 178)
         Me.btn5.Name = "btn5"
-        Me.btn5.Size = New System.Drawing.Size(94, 29)
+        Me.btn5.Size = New System.Drawing.Size(39, 29)
         Me.btn5.TabIndex = 9
         Me.btn5.Text = "5"
         Me.btn5.UseVisualStyleBackColor = True
         '
         'btn6
         '
-        Me.btn6.Location = New System.Drawing.Point(314, 189)
+        Me.btn6.Location = New System.Drawing.Point(138, 178)
         Me.btn6.Name = "btn6"
-        Me.btn6.Size = New System.Drawing.Size(94, 29)
+        Me.btn6.Size = New System.Drawing.Size(39, 29)
         Me.btn6.TabIndex = 10
         Me.btn6.Text = "6"
         Me.btn6.UseVisualStyleBackColor = True
         '
         'btn7
         '
-        Me.btn7.Location = New System.Drawing.Point(82, 154)
+        Me.btn7.Location = New System.Drawing.Point(27, 143)
         Me.btn7.Name = "btn7"
-        Me.btn7.Size = New System.Drawing.Size(94, 29)
+        Me.btn7.Size = New System.Drawing.Size(39, 29)
         Me.btn7.TabIndex = 11
         Me.btn7.Text = "7"
         Me.btn7.UseVisualStyleBackColor = True
         '
         'btn8
         '
-        Me.btn8.Location = New System.Drawing.Point(200, 154)
+        Me.btn8.Location = New System.Drawing.Point(83, 143)
         Me.btn8.Name = "btn8"
-        Me.btn8.Size = New System.Drawing.Size(94, 29)
+        Me.btn8.Size = New System.Drawing.Size(39, 29)
         Me.btn8.TabIndex = 12
         Me.btn8.Text = "8"
         Me.btn8.UseVisualStyleBackColor = True
         '
         'btn9
         '
-        Me.btn9.Location = New System.Drawing.Point(314, 154)
+        Me.btn9.Location = New System.Drawing.Point(138, 143)
         Me.btn9.Name = "btn9"
-        Me.btn9.Size = New System.Drawing.Size(94, 29)
+        Me.btn9.Size = New System.Drawing.Size(39, 29)
         Me.btn9.TabIndex = 13
         Me.btn9.Text = "9"
         Me.btn9.UseVisualStyleBackColor = True
         '
         'btnAddition
         '
-        Me.btnAddition.Location = New System.Drawing.Point(465, 224)
+        Me.btnAddition.Location = New System.Drawing.Point(193, 213)
         Me.btnAddition.Name = "btnAddition"
-        Me.btnAddition.Size = New System.Drawing.Size(94, 29)
+        Me.btnAddition.Size = New System.Drawing.Size(39, 29)
         Me.btnAddition.TabIndex = 14
         Me.btnAddition.Text = "+"
         Me.btnAddition.UseVisualStyleBackColor = True
         '
         'btnMultiplikation
         '
-        Me.btnMultiplikation.Location = New System.Drawing.Point(465, 189)
+        Me.btnMultiplikation.Location = New System.Drawing.Point(193, 178)
         Me.btnMultiplikation.Name = "btnMultiplikation"
-        Me.btnMultiplikation.Size = New System.Drawing.Size(94, 29)
+        Me.btnMultiplikation.Size = New System.Drawing.Size(39, 29)
         Me.btnMultiplikation.TabIndex = 15
         Me.btnMultiplikation.Text = "*"
         Me.btnMultiplikation.UseVisualStyleBackColor = True
         '
         'btnDivision
         '
-        Me.btnDivision.Location = New System.Drawing.Point(465, 154)
+        Me.btnDivision.Location = New System.Drawing.Point(193, 143)
         Me.btnDivision.Name = "btnDivision"
-        Me.btnDivision.Size = New System.Drawing.Size(94, 29)
+        Me.btnDivision.Size = New System.Drawing.Size(39, 29)
         Me.btnDivision.TabIndex = 16
         Me.btnDivision.Text = "/"
         Me.btnDivision.UseVisualStyleBackColor = True
         '
         'btnSubtraktion
         '
-        Me.btnSubtraktion.Location = New System.Drawing.Point(465, 259)
+        Me.btnSubtraktion.Location = New System.Drawing.Point(193, 248)
         Me.btnSubtraktion.Name = "btnSubtraktion"
-        Me.btnSubtraktion.Size = New System.Drawing.Size(94, 29)
+        Me.btnSubtraktion.Size = New System.Drawing.Size(39, 29)
         Me.btnSubtraktion.TabIndex = 17
         Me.btnSubtraktion.Text = "-"
         Me.btnSubtraktion.UseVisualStyleBackColor = True
         '
         'btnLikaMed
         '
-        Me.btnLikaMed.Location = New System.Drawing.Point(314, 259)
+        Me.btnLikaMed.Location = New System.Drawing.Point(138, 248)
         Me.btnLikaMed.Name = "btnLikaMed"
-        Me.btnLikaMed.Size = New System.Drawing.Size(94, 29)
+        Me.btnLikaMed.Size = New System.Drawing.Size(39, 29)
         Me.btnLikaMed.TabIndex = 18
         Me.btnLikaMed.Text = "="
         Me.btnLikaMed.UseVisualStyleBackColor = True
         '
         'btn0
         '
-        Me.btn0.Location = New System.Drawing.Point(82, 259)
+        Me.btn0.Location = New System.Drawing.Point(27, 248)
         Me.btn0.Name = "btn0"
-        Me.btn0.Size = New System.Drawing.Size(94, 29)
+        Me.btn0.Size = New System.Drawing.Size(39, 29)
         Me.btn0.TabIndex = 19
         Me.btn0.Text = "0"
         Me.btn0.UseVisualStyleBackColor = True
         '
         'btnPunkt
         '
-        Me.btnPunkt.Location = New System.Drawing.Point(200, 259)
+        Me.btnPunkt.Location = New System.Drawing.Point(83, 248)
         Me.btnPunkt.Name = "btnPunkt"
-        Me.btnPunkt.Size = New System.Drawing.Size(94, 29)
+        Me.btnPunkt.Size = New System.Drawing.Size(39, 29)
         Me.btnPunkt.TabIndex = 20
         Me.btnPunkt.Text = "."
         Me.btnPunkt.UseVisualStyleBackColor = True
         '
         'btnAC
         '
-        Me.btnAC.Location = New System.Drawing.Point(314, 119)
+        Me.btnAC.Location = New System.Drawing.Point(138, 108)
         Me.btnAC.Name = "btnAC"
-        Me.btnAC.Size = New System.Drawing.Size(94, 29)
+        Me.btnAC.Size = New System.Drawing.Size(39, 29)
         Me.btnAC.TabIndex = 21
         Me.btnAC.Text = "AC"
         Me.btnAC.UseVisualStyleBackColor = True
         '
         'btnC
         '
-        Me.btnC.Location = New System.Drawing.Point(465, 119)
+        Me.btnC.Location = New System.Drawing.Point(193, 108)
         Me.btnC.Name = "btnC"
-        Me.btnC.Size = New System.Drawing.Size(94, 29)
+        Me.btnC.Size = New System.Drawing.Size(39, 29)
         Me.btnC.TabIndex = 22
         Me.btnC.Text = "C"
         Me.btnC.UseVisualStyleBackColor = True
         '
-        'Form1
+        'frmKalkylator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(598, 313)
+        Me.ClientSize = New System.Drawing.Size(257, 313)
         Me.Controls.Add(Me.btnC)
         Me.Controls.Add(Me.btnAC)
         Me.Controls.Add(Me.btnPunkt)
@@ -296,8 +296,11 @@ Partial Class Form1
         Me.Controls.Add(Me.txt2)
         Me.Controls.Add(Me.txtOp)
         Me.Controls.Add(Me.txt1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "frmKalkylator"
+        Me.Text = "Simpel kalkylator"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
