@@ -16,46 +16,36 @@ Public Class frmKalkylator
         lblMemory.Text = ""
     End Sub
 
-    Private Sub NumbersClick(sender As Object, e As EventArgs) Handles btn9.Click, btnDecimal.Click, btn8.Click, btn7.Click, btn6.Click, btn5.Click, btn4.Click, btn3.Click, btn2.Click, btn1.Click, btn0.Click
+    Private Sub NumbersClick(sender As Object, e As EventArgs) Handles btn9.Click, btn8.Click, btn7.Click, btn6.Click, btn5.Click, btn4.Click, btn3.Click, btn2.Click, btn1.Click, btn0.Click
         btnEquals.Focus()
         If nyInmatning = False Then
-            Dim maxLen = 7 - txtInput.Text.Contains(btnDecimal.Text) - txtInput.Text.StartsWith("-")
-
-            ' Avbryt om
-            '   - antalet tecken är mer än 7 (inget decimaltecken), 
-            '   - antalet tecken är mer än 8 (varav ett är decimaltecken)
-            '   - inmatat tal är en 0 och det bara finns en 0:a i rutan
-            If (txtInput.TextLength > maxLen) _
-            OrElse (txtInput.Text = "0" AndAlso sender Is btn0) Then
+            Dim maxLangd = 8 - txtInput.Text.Contains(btnDecimal.Text)
+            ' Avbryt om antalet tecken är mer än 8
+            If txtInput.TextLength >= maxLangd Then
                 Exit Sub
             End If
         Else
-            ' Ny inmatning ta ner flaggan och tilldela värdet från inmatningen till rutan
-            '  (med hantering av decimaltecken)
+            ' Ny inmatning ta ner flaggan och nollställ inmatningsrutan
             nyInmatning = False
-            If sender Is btnDecimal Then
-                txtInput.Text = "0" & sender.text
-                btnDecimal.Enabled = False
-            Else
-                txtInput.Text = sender.Text
-            End If
-            Exit Sub
+            txtInput.Text = "0"
         End If
 
-        ' Disabla decimaltecknet så snart vi fått ett
-        If sender Is btnDecimal Then
-            btnDecimal.Enabled = False
-            txtInput.Text &= sender.Text
-            Exit Sub
-        End If
-
-        ' Skriv in siffra/punkt i textrutan
+        ' Skriv in siffra i textrutan
         If txtInput.Text = "0" Then
             txtInput.Text = sender.Text
         Else
             txtInput.Text &= sender.Text
         End If
 
+    End Sub
+    Private Sub DecimalClick(sender As Object, e As EventArgs) Handles btnDecimal.Click
+        btnEquals.Focus()
+        ' Disabla decimaltecknet så snart vi fått ett
+        If txtInput.TextLength < 8 Then
+            btnDecimal.Enabled = False
+            nyInmatning = False
+            txtInput.Text &= sender.Text
+        End If
     End Sub
 
     Private Sub btnAC_Click(sender As Object, e As EventArgs) Handles btnAC.Click
