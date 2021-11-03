@@ -38,26 +38,40 @@
     End Sub
 
     Private Sub rakna_Click(sender As Object, e As EventArgs) Handles btnAddition.Click, btnSubtraktion.Click, btnMultiplikation.Click, btnLikaMed.Click, btnDivision.Click
+        Dim resultat As Double
         txt2.Text = txtInput.Text
 
         Select Case txtOp.Text
             Case "+"
-                txtInput.Text = Val(txt1.Text) + Val(txt2.Text)
+                resultat = Val(txt1.Text) + Val(txt2.Text)
             Case "-"
-                txtInput.Text = Val(txt1.Text) - Val(txt2.Text)
+                resultat = Val(txt1.Text) - Val(txt2.Text)
             Case "/"
-                txtInput.Text = Val(txt1.Text) / Val(txt2.Text)
+                resultat = Val(txt1.Text) / Val(txt2.Text)
             Case "*"
-                txtInput.Text = Val(txt1.Text) * Val(txt2.Text)
+                resultat = Val(txt1.Text) * Val(txt2.Text)
             Case Else
-
+                resultat = Val(txt2.Text)
         End Select
         txtOp.Text = sender.text
-        txtInput.Text = Strings.Replace(txtInput.Text, ",", ".")
+        txtInput.Text = formateraResultat(resultat)
+
         txt1.Text = txtInput.Text
         btnPunkt.Enabled = True
         nyBerakning = True
     End Sub
+
+    Private Function formateraResultat(resultat As Double) As String
+        Dim res As String
+        Dim format As String = "0.#######"
+        If resultat <> 0 Then
+            format = Strings.Left(format, format.Length - Math.Log10(Math.Abs(resultat)))
+        End If
+        res = Strings.Replace(resultat.ToString(format), ",", ".")
+
+        Return res
+
+    End Function
 
     Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
         btnPunkt.Enabled = True
