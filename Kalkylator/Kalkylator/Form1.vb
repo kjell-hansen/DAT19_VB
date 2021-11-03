@@ -186,19 +186,6 @@ Public Class frmKalkylator
         End If
     End Sub
 
-    'Protected Overrides Sub OnKeyDown(ByVal e As KeyEventArgs)
-    '    MyBase.OnKeyDown(e)
-    '    Console.WriteLine(e.KeyCode)
-
-    '    If (e.KeyCode = Keys.CapsLock) Then
-    '        ' do some thing ...
-    '        Dim value = 20
-    '    ElseIf (e.KeyCode = Keys.Control) Then
-    '        Dim value = 6
-    '    End If
-
-    'End Sub
-
     Private Sub frmKalkylator_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
 
         If e.Modifiers = Keys.Shift + Keys.Control Then
@@ -239,6 +226,16 @@ Public Class frmKalkylator
         Select Case e.KeyCode
             Case Keys.Enter
                 btnEquals.PerformClick()
+            Case Keys.Back
+                If nyInmatning = False Then
+                    txtInput.Text = taBortSistaTecknet(txtInput.Text)
+                    If txtInput.Text = "" OrElse txtInput.Text = "-" Then
+                        ClearTextbox()
+                    End If
+                    If txtInput.Text.Contains(btnDecimal.Text) = False Then
+                        btnDecimal.Enabled = True
+                    End If
+                End If
             Case Keys.D1, Keys.NumPad1
                 btn1.PerformClick()
             Case Keys.D2, Keys.NumPad2
@@ -274,4 +271,15 @@ Public Class frmKalkylator
         End Select
     End Sub
 
+    Private Function taBortSistaTecknet(text As String) As String
+        Dim res As String
+        If text = "" Then
+            Return ""
+        End If
+
+        res = text.Remove(text.Length - 1)
+
+        Return res
+
+    End Function
 End Class
