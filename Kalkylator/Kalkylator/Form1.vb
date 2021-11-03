@@ -17,6 +17,7 @@ Public Class frmKalkylator
     End Sub
 
     Private Sub NumbersClick(sender As Object, e As EventArgs) Handles btn9.Click, btnDecimal.Click, btn8.Click, btn7.Click, btn6.Click, btn5.Click, btn4.Click, btn3.Click, btn2.Click, btn1.Click, btn0.Click
+        btnEquals.Focus()
         If nyInmatning = False Then
             Dim maxLen = 7 - txtInput.Text.Contains(btnDecimal.Text) - txtInput.Text.StartsWith("-")
 
@@ -67,6 +68,8 @@ Public Class frmKalkylator
 
     Private Sub Calculate(sender As Object, e As EventArgs) Handles btnSubtract.Click, btnMultiply.Click, btnDivide.Click, btnAdd.Click, btnEquals.Click
         Dim input As Double
+        btnEquals.Focus()
+
         If Double.TryParse(txtInput.Text, input) = False Then
             Exit Sub
         End If
@@ -97,6 +100,7 @@ Public Class frmKalkylator
     End Sub
     Private Sub UnaryFunc(sender As Object, e As EventArgs) Handles btnSquare.Click, btnSqRoot.Click, btnInvert.Click
         Dim input, res As Double
+        btnEquals.Focus()
         If Double.TryParse(txtInput.Text, input) = False Then
             Exit Sub
         End If
@@ -150,6 +154,7 @@ Public Class frmKalkylator
         ' Rensar textrutan
         txtInput.Text = "0"
         btnDecimal.Enabled = True
+        btnEquals.Focus()
     End Sub
 
     Private Sub btnOpposite_Click(sender As Object, e As EventArgs) Handles btnOpposite.Click
@@ -190,4 +195,93 @@ Public Class frmKalkylator
             lblMemory.Text = "M"
         End If
     End Sub
+
+    'Protected Overrides Sub OnKeyDown(ByVal e As KeyEventArgs)
+    '    MyBase.OnKeyDown(e)
+    '    Console.WriteLine(e.KeyCode)
+
+    '    If (e.KeyCode = Keys.CapsLock) Then
+    '        ' do some thing ...
+    '        Dim value = 20
+    '    ElseIf (e.KeyCode = Keys.Control) Then
+    '        Dim value = 6
+    '    End If
+
+    'End Sub
+
+    Private Sub frmKalkylator_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+
+        If e.Modifiers = Keys.Shift + Keys.Control Then
+            Select Case e.KeyCode
+                Case Keys.OemQuestion
+                    btnSquare.PerformClick()
+                Case Keys.D7
+                    btnInvert.PerformClick()
+            End Select
+            Exit Sub
+        End If
+        If e.Modifiers = Keys.Control Then
+            Select Case e.KeyCode
+                Case Keys.Multiply
+                    btnSquare.PerformClick()
+                Case Keys.Divide
+                    btnInvert.PerformClick()
+            End Select
+            Exit Sub
+        End If
+
+        If e.Modifiers = Keys.Shift Then
+            Select Case e.KeyCode
+                Case Keys.OemQuestion
+                    btnMultiply.PerformClick()
+                Case Keys.D1
+                    btnOpposite.PerformClick()
+                Case Keys.D7
+                    btnDivide.PerformClick()
+                Case Keys.C
+                    btnC.PerformClick()
+                Case Else
+                    Debug.WriteLine(e.KeyCode)
+            End Select
+            Exit Sub
+        End If
+
+        Select Case e.KeyCode
+            Case Keys.Enter
+                btnEquals.PerformClick()
+            Case Keys.D1, Keys.NumPad1
+                btn1.PerformClick()
+            Case Keys.D2, Keys.NumPad2
+                btn2.PerformClick()
+            Case Keys.D3, Keys.NumPad3
+                btn3.PerformClick()
+            Case Keys.D4, Keys.NumPad4
+                btn4.PerformClick()
+            Case Keys.D5, Keys.NumPad5
+                btn5.PerformClick()
+            Case Keys.D6, Keys.NumPad6
+                btn6.PerformClick()
+            Case Keys.D7, Keys.NumPad7
+                btn7.PerformClick()
+            Case Keys.D8, Keys.NumPad8
+                btn8.PerformClick()
+            Case Keys.D9, Keys.NumPad9
+                btn9.PerformClick()
+            Case Keys.D0, Keys.NumPad0
+                btn0.PerformClick()
+            Case Keys.Multiply
+                btnMultiply.PerformClick()
+            Case Keys.Divide
+                btnDivide.PerformClick()
+            Case Keys.Add, Keys.Oemplus
+                btnAdd.PerformClick()
+            Case Keys.Subtract, Keys.OemMinus
+                btnSubtract.PerformClick()
+            Case Keys.Decimal, Keys.OemPeriod
+                btnDecimal.PerformClick()
+            Case Keys.Delete
+                btnC.PerformClick()
+        End Select
+    End Sub
+
 End Class
