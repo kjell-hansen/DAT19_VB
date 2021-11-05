@@ -59,30 +59,35 @@
         ' Slutligt resultat
         Dim resultat As Double
 
-        ' Sätt andra talet till inmatad text
-        txt2.Text = txtInput.Text
+        If txt1.Text = "" Then
+            txt1.Text = txtInput.Text
+        Else
+            ' Sätt andra talet till inmatad text
+            txt2.Text = txtInput.Text
 
-        ' Kolla vilken operator som valdes förra gången
-        Select Case txtOp.Text
-            Case "+"
-                resultat = Val(txt1.Text) + Val(txt2.Text)
-            Case "-"
-                resultat = Val(txt1.Text) - Val(txt2.Text)
-            Case "/"
-                resultat = Val(txt1.Text) / Val(txt2.Text)
-            Case "*"
-                resultat = Val(txt1.Text) * Val(txt2.Text)
-            Case Else
-                resultat = Val(txt2.Text)
-        End Select
+            ' Kolla vilken operator som valdes förra gången
+            Select Case txtOp.Text
+                Case "+"
+                    resultat = Val(txt1.Text) + Val(txt2.Text)
+                Case "-"
+                    resultat = Val(txt1.Text) - Val(txt2.Text)
+                Case "/"
+                    resultat = Val(txt1.Text) / Val(txt2.Text)
+                Case "*"
+                    resultat = Val(txt1.Text) * Val(txt2.Text)
+                Case Else
+                    resultat = Val(txt2.Text)
+            End Select
+
+            ' Formatera resultatet (8 siffror)
+            txtInput.Text = formateraResultat(resultat)
+
+            ' Sätt första talet till nuvarande resultat
+            txt1.Text = txtInput.Text
+        End If
+
         ' Tilldela vilken operator som ska användas härnäst
         txtOp.Text = sender.text
-
-        ' Formatera resultatet (8 siffror)
-        txtInput.Text = formateraResultat(resultat)
-
-        ' Sätt första talet till nuvarande resultat
-        txt1.Text = txtInput.Text
 
         ' Hissa flaggor för att tillåta punkt och att det är en ny inmatning
         btnPunkt.Enabled = True
