@@ -22,15 +22,19 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtVinkel = New System.Windows.Forms.TextBox()
         Me.txtHastighet = New System.Windows.Forms.TextBox()
         Me.btnRita = New System.Windows.Forms.Button()
-        Me.btnRensa = New System.Windows.Forms.Button()
         Me.picKurva = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblAntalTraffar = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnBorja = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblTid = New System.Windows.Forms.Label()
         CType(Me.picKurva, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,17 +76,8 @@ Partial Class Form1
         Me.btnRita.Name = "btnRita"
         Me.btnRita.Size = New System.Drawing.Size(92, 32)
         Me.btnRita.TabIndex = 2
-        Me.btnRita.Text = "Rita!"
+        Me.btnRita.Text = "Skjut!"
         Me.btnRita.UseVisualStyleBackColor = True
-        '
-        'btnRensa
-        '
-        Me.btnRensa.Location = New System.Drawing.Point(118, 222)
-        Me.btnRensa.Name = "btnRensa"
-        Me.btnRensa.Size = New System.Drawing.Size(92, 32)
-        Me.btnRensa.TabIndex = 2
-        Me.btnRensa.Text = "Rensa!"
-        Me.btnRensa.UseVisualStyleBackColor = True
         '
         'picKurva
         '
@@ -114,15 +109,47 @@ Partial Class Form1
         Me.lblAntalTraffar.TabIndex = 5
         Me.lblAntalTraffar.Text = "lblAntal"
         '
+        'Timer1
+        '
+        '
+        'btnBorja
+        '
+        Me.btnBorja.Location = New System.Drawing.Point(118, 227)
+        Me.btnBorja.Name = "btnBorja"
+        Me.btnBorja.Size = New System.Drawing.Size(92, 33)
+        Me.btnBorja.TabIndex = 6
+        Me.btnBorja.Text = "Börja!"
+        Me.btnBorja.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(31, 338)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(111, 20)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Återstående tid"
+        '
+        'lblTid
+        '
+        Me.lblTid.AutoSize = True
+        Me.lblTid.Location = New System.Drawing.Point(157, 338)
+        Me.lblTid.Name = "lblTid"
+        Me.lblTid.Size = New System.Drawing.Size(47, 20)
+        Me.lblTid.TabIndex = 8
+        Me.lblTid.Text = "lblTid"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(856, 464)
+        Me.Controls.Add(Me.lblTid)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.btnBorja)
         Me.Controls.Add(Me.lblAntalTraffar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.picKurva)
-        Me.Controls.Add(Me.btnRensa)
         Me.Controls.Add(Me.btnRita)
         Me.Controls.Add(Me.txtHastighet)
         Me.Controls.Add(Me.txtVinkel)
@@ -143,8 +170,11 @@ Partial Class Form1
     Friend WithEvents txtVinkel As TextBox
     Friend WithEvents txtHastighet As TextBox
     Friend WithEvents btnRita As Button
-    Friend WithEvents btnRensa As Button
     Friend WithEvents picKurva As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents lblAntalTraffar As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents btnBorja As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTid As Label
 End Class

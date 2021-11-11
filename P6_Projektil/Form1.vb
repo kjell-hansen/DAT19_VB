@@ -1,6 +1,9 @@
-﻿Public Class Form1
+﻿Imports System.ComponentModel
+
+Public Class Form1
     Dim xMal, yMal As Single
     Dim antalTraffar As Integer
+    Dim startTid As Long
     Private Sub btnRita_Click(sender As Object, e As EventArgs) Handles btnRita.Click
         ' Definiera variabler som behövs för att rita ut projektilbanan
         Dim x, y, hastighet, tid, vinkel As Single
@@ -13,7 +16,7 @@
         punkt = picKurva.CreateGraphics()
 
         Do
-            tid = tid + 10 / hastighet
+            tid = tid + 1 / hastighet
 
             'Beräkna aktuell position
             x = hastighet * Math.Cos(vinkel * Math.PI / 180) * tid
@@ -29,43 +32,109 @@
 
     End Sub
 
-    Private Sub btnRensa_Click(sender As Object, e As EventArgs) Handles btnRensa.Click
+    Private Sub btnRensa_Click()
         picKurva.CreateGraphics.Clear(picKurva.BackColor)
-        ritaMal()
+        ritaMal(xMal, yMal)
     End Sub
 
     Private Sub txtVinkel_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtVinkel.Validating
-        If (Val(txtVinkel.Text) > 90 Or Val(txtVinkel.Text) < 0) Then
-            btnRita.Enabled = False
-            txtVinkel.BackColor = Color.Pink
-        Else
-            btnRita.Enabled = True
-            txtVinkel.BackColor = SystemColors.Window
+        If Timer1.Enabled = True Then
+            If (Val(txtVinkel.Text) > 90 Or Val(txtVinkel.Text) < 0) Then
+                btnRita.Enabled = False
+                txtVinkel.BackColor = Color.Pink
+            Else
+                btnRita.Enabled = True
+                txtVinkel.BackColor = SystemColors.Window
+            End If
         End If
     End Sub
 
-    Private Sub ritaMal()
+    Private Sub ritaMal(xMal As Single, yMal As Single)
         ' Definiera variabler för målet
         Dim punkt As System.Drawing.Graphics
         Dim penna As New System.Drawing.Pen(Brushes.Red, 4)
-
-        ' Hitta koordinater för målet
-        xMal = picKurva.Width * Rnd()
-        yMal = picKurva.Height * Rnd()
 
         'Rita ut målet
         punkt = picKurva.CreateGraphics
         punkt.DrawEllipse(penna, xMal, yMal, 10, 10)
 
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblAntalTraffar.Text = antalTraffar
+
+        ' Hitta koordinater för målet
+        xMal = picKurva.Width * Rnd()
+        yMal = picKurva.Height * Rnd()
+
+        btnRita.Enabled = False
+    End Sub
+
+    Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        ritaMal(xMal, yMal)
+
+    End Sub
+
+    Private Sub btnBorja_Click(sender As Object, e As EventArgs) Handles btnBorja.Click
+        btnRita.Enabled = True
+        btnBorja.Enabled = False
+        antalTraffar = 0
+        lblAntalTraffar.Text = antalTraffar
+
+        Timer1.Start()
+        startTid = Now.Ticks
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim tidPasserad As Long = Now.Ticks - startTid
+        Dim tidKvar As New TimeSpan(tidPasserad)
+
+        lblTid.Text = 60 - tidKvar.TotalSeconds
+
+        If tidKvar.TotalSeconds > 60 Then
+            ' Nolla tidstexten
+            lblTid.Text = 0
+            ' Enable Börja, disabla skjut
+            btnBorja.Enabled = True
+            btnRita.Enabled = False
+            ' Stoppa timern
+            Timer1.Stop()
+        End If
+
+    End Sub
+
+    Private Sub picKurva_MouseMove(sender As Object, e As MouseEventArgs) Handles picKurva.MouseMove
+        Dim linje As System.Drawing.Graphics
+        Dim penna As New System.Drawing.Pen(Brushes.Green, 2)
+        Dim sudd As New System.Drawing.Pen(picKurva.BackColor, 2)
+        Static x, y As Single
+
+        If e.Button = MouseButtons.Left Then
+            linje = picKurva.CreateGraphics
+            linje.DrawLine(sudd, x, y, 0, picKurva.Height)
+            x = e.X
+            y = e.Y
+            txtHastighet.Text = Math.Round(Math.Sqrt(x * x + (picKurva.Height - y) ^ 2), 0)
+            txtVinkel.Text = Math.Round(Math.Atan((picKurva.Height - y) / x) * 180 / Math.PI, 1)
+            linje.DrawLine(penna, x, y, 0, picKurva.Height)
+            ritaMal(xMal, yMal)
+        End If
+    End Sub
+
     Private Function traff(x As Single, y As Single) As Boolean
         ' Titta om vi har samma x och y-koordinater som målet
-        If Math.Abs(x + 5 - xMal) < 10 And Math.Abs(y + 5 - yMal) < 10 Then
+        If Math.Abs(x - xMal) < 10 And Math.Abs(y - yMal) < 10 Then
             ' Öka antalet träffar
             antalTraffar += 1
             lblAntalTraffar.Text = antalTraffar
+
+            ' Hitta koordinater för nya målet
+            xMal = picKurva.Width * Rnd()
+            yMal = picKurva.Height * Rnd()
+
             ' Rensa rutan och rita nytt mål
-            btnRensa.PerformClick()
+            btnRensa_Click()
             ' Returnera att det var en träff
             Return True
         End If
