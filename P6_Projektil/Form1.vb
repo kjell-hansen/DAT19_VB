@@ -25,6 +25,7 @@
 
     Private Sub btnRensa_Click(sender As Object, e As EventArgs) Handles btnRensa.Click
         picKurva.CreateGraphics.Clear(picKurva.BackColor)
+        ritaMal()
     End Sub
 
     Private Sub txtVinkel_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtVinkel.Validating
@@ -35,5 +36,21 @@
             btnRita.Enabled = True
             txtVinkel.BackColor = SystemColors.Window
         End If
+    End Sub
+
+    Private Sub ritaMal()
+        ' Definiera variabler för målet
+        Dim xMal, yMal As Single
+        Dim punkt As System.Drawing.Graphics
+        Dim penna As New System.Drawing.Pen(Brushes.Red, 4)
+
+        ' Hitta koordinater för målet
+        xMal = picKurva.Width * Rnd()
+        yMal = picKurva.Height * Rnd()
+
+        'Rita ut målet
+        punkt = picKurva.CreateGraphics
+        punkt.DrawEllipse(penna, xMal, yMal, 10, 10)
+
     End Sub
 End Class
