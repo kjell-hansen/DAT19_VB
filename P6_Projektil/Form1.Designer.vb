@@ -29,6 +29,8 @@ Partial Class Form1
         Me.btnRita = New System.Windows.Forms.Button()
         Me.btnRensa = New System.Windows.Forms.Button()
         Me.picKurva = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblAntalTraffar = New System.Windows.Forms.Label()
         CType(Me.picKurva, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,11 +96,31 @@ Partial Class Form1
         Me.picKurva.TabIndex = 3
         Me.picKurva.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(31, 300)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 20)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Antal träffar"
+        '
+        'lblAntalTraffar
+        '
+        Me.lblAntalTraffar.AutoSize = True
+        Me.lblAntalTraffar.Location = New System.Drawing.Point(126, 300)
+        Me.lblAntalTraffar.Name = "lblAntalTraffar"
+        Me.lblAntalTraffar.Size = New System.Drawing.Size(61, 20)
+        Me.lblAntalTraffar.TabIndex = 5
+        Me.lblAntalTraffar.Text = "lblAntal"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(856, 464)
+        Me.Controls.Add(Me.lblAntalTraffar)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.picKurva)
         Me.Controls.Add(Me.btnRensa)
         Me.Controls.Add(Me.btnRita)
@@ -123,4 +145,6 @@ Partial Class Form1
     Friend WithEvents btnRita As Button
     Friend WithEvents btnRensa As Button
     Friend WithEvents picKurva As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblAntalTraffar As Label
 End Class
