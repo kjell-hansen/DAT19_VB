@@ -4,7 +4,7 @@ Public Class Form1
     Dim xMal, yMal As Single
     Dim antalTraffar As Integer
     Dim startTid As Long
-    Private Sub btnRita_Click(sender As Object, e As EventArgs) Handles btnRita.Click
+    Private Sub skjut()
         ' Definiera variabler som behövs för att rita ut projektilbanan
         Dim x, y, hastighet, tid, vinkel As Single
         Dim punkt As System.Drawing.Graphics
@@ -40,10 +40,8 @@ Public Class Form1
     Private Sub txtVinkel_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtVinkel.Validating
         If Timer1.Enabled = True Then
             If (Val(txtVinkel.Text) > 90 Or Val(txtVinkel.Text) < 0) Then
-                btnRita.Enabled = False
                 txtVinkel.BackColor = Color.Pink
             Else
-                btnRita.Enabled = True
                 txtVinkel.BackColor = SystemColors.Window
             End If
         End If
@@ -67,7 +65,6 @@ Public Class Form1
         xMal = picKurva.Width * Rnd()
         yMal = picKurva.Height * Rnd()
 
-        btnRita.Enabled = False
     End Sub
 
     Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
@@ -76,10 +73,11 @@ Public Class Form1
     End Sub
 
     Private Sub btnBorja_Click(sender As Object, e As EventArgs) Handles btnBorja.Click
-        btnRita.Enabled = True
         btnBorja.Enabled = False
         antalTraffar = 0
         lblAntalTraffar.Text = antalTraffar
+        picKurva.Enabled = True
+        ritaMal(xMal, yMal)
 
         Timer1.Start()
         startTid = Now.Ticks
@@ -93,11 +91,12 @@ Public Class Form1
         lblTid.Text = 60 - tidKvar.TotalSeconds
 
         If tidKvar.TotalSeconds > 60 Then
+            ' Inaktivera picture-boxen
+            picKurva.Enabled = False
             ' Nolla tidstexten
             lblTid.Text = 0
             ' Enable Börja, disabla skjut
             btnBorja.Enabled = True
-            btnRita.Enabled = False
             ' Stoppa timern
             Timer1.Stop()
         End If
@@ -122,6 +121,12 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub picKurva_MouseUp(sender As Object, e As MouseEventArgs) Handles picKurva.MouseUp
+        If e.Button = MouseButtons.Left Then
+            skjut()
+        End If
+    End Sub
+
     Private Function traff(x As Single, y As Single) As Boolean
         ' Titta om vi har samma x och y-koordinater som målet
         If Math.Abs(x - xMal) < 10 And Math.Abs(y - yMal) < 10 Then
@@ -130,8 +135,9 @@ Public Class Form1
             lblAntalTraffar.Text = antalTraffar
 
             ' Hitta koordinater för nya målet
-            xMal = picKurva.Width * Rnd()
-            yMal = picKurva.Height * Rnd()
+            ' Marginal runt hela på 50px
+            xMal = (picKurva.Width - 100) * Rnd() + 50
+            yMal = (picKurva.Height - 100) * Rnd() + 50
 
             ' Rensa rutan och rita nytt mål
             btnRensa_Click()

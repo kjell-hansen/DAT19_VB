@@ -27,7 +27,6 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtVinkel = New System.Windows.Forms.TextBox()
         Me.txtHastighet = New System.Windows.Forms.TextBox()
-        Me.btnRita = New System.Windows.Forms.Button()
         Me.picKurva = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblAntalTraffar = New System.Windows.Forms.Label()
@@ -41,11 +40,12 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 54)
+        Me.Label1.Location = New System.Drawing.Point(31, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Vinkel"
+        Me.Label1.Visible = False
         '
         'Label2
         '
@@ -55,6 +55,7 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(73, 20)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Hastighet"
+        Me.Label2.Visible = False
         '
         'txtVinkel
         '
@@ -62,22 +63,15 @@ Partial Class Form1
         Me.txtVinkel.Name = "txtVinkel"
         Me.txtVinkel.Size = New System.Drawing.Size(133, 27)
         Me.txtVinkel.TabIndex = 1
+        Me.txtVinkel.Visible = False
         '
         'txtHastighet
         '
-        Me.txtHastighet.Location = New System.Drawing.Point(115, 94)
+        Me.txtHastighet.Location = New System.Drawing.Point(115, 93)
         Me.txtHastighet.Name = "txtHastighet"
         Me.txtHastighet.Size = New System.Drawing.Size(133, 27)
         Me.txtHastighet.TabIndex = 1
-        '
-        'btnRita
-        '
-        Me.btnRita.Location = New System.Drawing.Point(118, 169)
-        Me.btnRita.Name = "btnRita"
-        Me.btnRita.Size = New System.Drawing.Size(92, 32)
-        Me.btnRita.TabIndex = 2
-        Me.btnRita.Text = "Skjut!"
-        Me.btnRita.UseVisualStyleBackColor = True
+        Me.txtHastighet.Visible = False
         '
         'picKurva
         '
@@ -85,9 +79,10 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picKurva.BackColor = System.Drawing.Color.White
-        Me.picKurva.Location = New System.Drawing.Point(292, 0)
+        Me.picKurva.Enabled = False
+        Me.picKurva.Location = New System.Drawing.Point(293, 0)
         Me.picKurva.Name = "picKurva"
-        Me.picKurva.Size = New System.Drawing.Size(564, 464)
+        Me.picKurva.Size = New System.Drawing.Size(565, 464)
         Me.picKurva.TabIndex = 3
         Me.picKurva.TabStop = False
         '
@@ -116,7 +111,7 @@ Partial Class Form1
         '
         Me.btnBorja.Location = New System.Drawing.Point(118, 227)
         Me.btnBorja.Name = "btnBorja"
-        Me.btnBorja.Size = New System.Drawing.Size(92, 33)
+        Me.btnBorja.Size = New System.Drawing.Size(91, 33)
         Me.btnBorja.TabIndex = 6
         Me.btnBorja.Text = "Börja!"
         Me.btnBorja.UseVisualStyleBackColor = True
@@ -124,7 +119,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(31, 338)
+        Me.Label4.Location = New System.Drawing.Point(31, 339)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(111, 20)
         Me.Label4.TabIndex = 7
@@ -133,7 +128,7 @@ Partial Class Form1
         'lblTid
         '
         Me.lblTid.AutoSize = True
-        Me.lblTid.Location = New System.Drawing.Point(157, 338)
+        Me.lblTid.Location = New System.Drawing.Point(157, 339)
         Me.lblTid.Name = "lblTid"
         Me.lblTid.Size = New System.Drawing.Size(47, 20)
         Me.lblTid.TabIndex = 8
@@ -150,13 +145,12 @@ Partial Class Form1
         Me.Controls.Add(Me.lblAntalTraffar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.picKurva)
-        Me.Controls.Add(Me.btnRita)
         Me.Controls.Add(Me.txtHastighet)
         Me.Controls.Add(Me.txtVinkel)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.MaximumSize = New System.Drawing.Size(1150, 600)
-        Me.MinimumSize = New System.Drawing.Size(730, 350)
+        Me.MaximumSize = New System.Drawing.Size(1149, 598)
+        Me.MinimumSize = New System.Drawing.Size(730, 347)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.picKurva, System.ComponentModel.ISupportInitialize).EndInit()
@@ -169,7 +163,6 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents txtVinkel As TextBox
     Friend WithEvents txtHastighet As TextBox
-    Friend WithEvents btnRita As Button
     Friend WithEvents picKurva As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents lblAntalTraffar As Label
