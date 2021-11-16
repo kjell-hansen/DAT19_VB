@@ -34,6 +34,13 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblSkapad = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtPost = New System.Windows.Forms.TextBox()
+        Me.btnLast = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnPrev = New System.Windows.Forms.Button()
+        Me.btnFirst = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -134,11 +141,70 @@ Partial Class Form1
         Me.lblSkapad.TabIndex = 10
         Me.lblSkapad.Text = "lblSkapad"
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.txtPost)
+        Me.Panel1.Controls.Add(Me.btnLast)
+        Me.Panel1.Controls.Add(Me.btnNext)
+        Me.Panel1.Controls.Add(Me.btnPrev)
+        Me.Panel1.Controls.Add(Me.btnFirst)
+        Me.Panel1.Location = New System.Drawing.Point(1, 390)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(522, 61)
+        Me.Panel1.TabIndex = 11
+        '
+        'txtPost
+        '
+        Me.txtPost.Location = New System.Drawing.Point(222, 18)
+        Me.txtPost.Name = "txtPost"
+        Me.txtPost.Size = New System.Drawing.Size(52, 27)
+        Me.txtPost.TabIndex = 1
+        '
+        'btnLast
+        '
+        Me.btnLast.Location = New System.Drawing.Point(382, 12)
+        Me.btnLast.Name = "btnLast"
+        Me.btnLast.Size = New System.Drawing.Size(65, 38)
+        Me.btnLast.TabIndex = 0
+        Me.btnLast.Text = ">>"
+        Me.btnLast.UseVisualStyleBackColor = True
+        '
+        'btnNext
+        '
+        Me.btnNext.Location = New System.Drawing.Point(293, 12)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(65, 38)
+        Me.btnNext.TabIndex = 0
+        Me.btnNext.Text = ">"
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
+        'btnPrev
+        '
+        Me.btnPrev.Location = New System.Drawing.Point(135, 12)
+        Me.btnPrev.Name = "btnPrev"
+        Me.btnPrev.Size = New System.Drawing.Size(65, 38)
+        Me.btnPrev.TabIndex = 0
+        Me.btnPrev.Text = "<"
+        Me.btnPrev.UseVisualStyleBackColor = True
+        '
+        'btnFirst
+        '
+        Me.btnFirst.Location = New System.Drawing.Point(47, 12)
+        Me.btnFirst.Name = "btnFirst"
+        Me.btnFirst.Size = New System.Drawing.Size(65, 38)
+        Me.btnFirst.TabIndex = 0
+        Me.btnFirst.Text = "<<"
+        Me.btnFirst.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(521, 450)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblSkapad)
         Me.Controls.Add(Me.txtOrt)
         Me.Controls.Add(Me.Label5)
@@ -156,6 +222,8 @@ Partial Class Form1
         Me.MinimizeBox = False
         Me.Name = "Form1"
         Me.Text = "Adresser"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,4 +241,10 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents lblSkapad As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents txtPost As TextBox
+    Friend WithEvents btnLast As Button
+    Friend WithEvents btnNext As Button
+    Friend WithEvents btnPrev As Button
+    Friend WithEvents btnFirst As Button
 End Class
