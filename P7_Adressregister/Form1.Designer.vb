@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmDetalj
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -40,6 +40,10 @@ Partial Class Form1
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrev = New System.Windows.Forms.Button()
         Me.btnFirst = New System.Windows.Forms.Button()
+        Me.btnSpara = New System.Windows.Forms.Button()
+        Me.btnLaggTill = New System.Windows.Forms.Button()
+        Me.btnRadera = New System.Windows.Forms.Button()
+        Me.btnLista = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -159,9 +163,11 @@ Partial Class Form1
         'txtPost
         '
         Me.txtPost.Location = New System.Drawing.Point(222, 18)
+        Me.txtPost.MaxLength = 7
         Me.txtPost.Name = "txtPost"
         Me.txtPost.Size = New System.Drawing.Size(52, 27)
         Me.txtPost.TabIndex = 1
+        Me.txtPost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnLast
         '
@@ -199,11 +205,51 @@ Partial Class Form1
         Me.btnFirst.Text = "<<"
         Me.btnFirst.UseVisualStyleBackColor = True
         '
-        'Form1
+        'btnSpara
+        '
+        Me.btnSpara.Location = New System.Drawing.Point(383, 195)
+        Me.btnSpara.Name = "btnSpara"
+        Me.btnSpara.Size = New System.Drawing.Size(85, 32)
+        Me.btnSpara.TabIndex = 12
+        Me.btnSpara.Text = "Spara"
+        Me.btnSpara.UseVisualStyleBackColor = True
+        '
+        'btnLaggTill
+        '
+        Me.btnLaggTill.Location = New System.Drawing.Point(383, 142)
+        Me.btnLaggTill.Name = "btnLaggTill"
+        Me.btnLaggTill.Size = New System.Drawing.Size(81, 29)
+        Me.btnLaggTill.TabIndex = 13
+        Me.btnLaggTill.Text = "Lägg till"
+        Me.btnLaggTill.UseVisualStyleBackColor = True
+        '
+        'btnRadera
+        '
+        Me.btnRadera.Location = New System.Drawing.Point(373, 80)
+        Me.btnRadera.Name = "btnRadera"
+        Me.btnRadera.Size = New System.Drawing.Size(94, 35)
+        Me.btnRadera.TabIndex = 14
+        Me.btnRadera.Text = "Radera"
+        Me.btnRadera.UseVisualStyleBackColor = True
+        '
+        'btnLista
+        '
+        Me.btnLista.Location = New System.Drawing.Point(383, 328)
+        Me.btnLista.Name = "btnLista"
+        Me.btnLista.Size = New System.Drawing.Size(85, 37)
+        Me.btnLista.TabIndex = 15
+        Me.btnLista.Text = "Visa lista"
+        Me.btnLista.UseVisualStyleBackColor = True
+        '
+        'frmDetalj
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(521, 450)
+        Me.Controls.Add(Me.btnLista)
+        Me.Controls.Add(Me.btnRadera)
+        Me.Controls.Add(Me.btnLaggTill)
+        Me.Controls.Add(Me.btnSpara)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblSkapad)
         Me.Controls.Add(Me.txtOrt)
@@ -220,7 +266,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Form1"
+        Me.Name = "frmDetalj"
         Me.Text = "Adresser"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -247,4 +293,8 @@ Partial Class Form1
     Friend WithEvents btnNext As Button
     Friend WithEvents btnPrev As Button
     Friend WithEvents btnFirst As Button
+    Friend WithEvents btnSpara As Button
+    Friend WithEvents btnLaggTill As Button
+    Friend WithEvents btnRadera As Button
+    Friend WithEvents btnLista As Button
 End Class
