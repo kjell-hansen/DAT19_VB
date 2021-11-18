@@ -13,13 +13,16 @@
 
     End Sub
 
-    Private Sub fyllFormular(postNr As Integer)
+    Public Sub fyllFormular(postNr As Integer)
         ' Hantera felaktiga postinmatningar
         If postNr > recordCount - 1 Then
             postNr = recordCount - 1
         ElseIf postNr < 0 Then
             postNr = 0
         End If
+
+        ' Sätt globala variabeln
+        Me.postNr = postNr
 
         txtFornamn.Text = ds.Tables("Adressbok").Rows(postNr)("Fornamn")
         txtEfternamn.Text = ds.Tables("Adressbok").Rows(postNr)("Efternamn")
