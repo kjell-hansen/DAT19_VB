@@ -47,10 +47,11 @@ Partial Class frmNyttAlbum
         '
         'txtArtistID
         '
-        Me.txtArtistID.Location = New System.Drawing.Point(394, 25)
+        Me.txtArtistID.Location = New System.Drawing.Point(0, 105)
         Me.txtArtistID.Name = "txtArtistID"
         Me.txtArtistID.Size = New System.Drawing.Size(125, 27)
         Me.txtArtistID.TabIndex = 2
+        Me.txtArtistID.Visible = False
         '
         'btnSpara
         '
@@ -76,7 +77,7 @@ Partial Class frmNyttAlbum
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAvbryt
-        Me.ClientSize = New System.Drawing.Size(546, 130)
+        Me.ClientSize = New System.Drawing.Size(409, 130)
         Me.Controls.Add(Me.btnAvbryt)
         Me.Controls.Add(Me.btnSpara)
         Me.Controls.Add(Me.txtArtistID)
